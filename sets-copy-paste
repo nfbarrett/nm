@@ -1,0 +1,40 @@
+function CP() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var source = ss.getRange('Dashboard!B2:AB2');
+  var prow = ss.getRange('Dashboard!A2').getValue();
+  source.copyTo(ss.getRange('Clean-Sets!A'+prow), {contentsOnly: true});
+}
+function foo(){
+var artwork = SpreadsheetApp.openById("1nU4MVbbPSKuzkGOOyhvxW-0Ec1uSC1b2RgA1EsVJhxA").getSheetByName("Dashboard").getRange("T4");
+var values = artwork.getValues();
+for(var i in values){
+  if(values[i][0].match("TRUE")!=null){
+     //cell contains "Monthly". Do something 
+  } 
+  if(values[i][0].match("FALSE")!=null){
+     //cell contains "Quarterly". Do something 
+  }
+  if(values[i][0].match("Yearly")!=null){
+     //cell contains "Yearly". Do something 
+  }
+}
+}
+function CP2() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var source = ss.getRange('n2!L1:P1');
+  var prow = ss.getRange('n2!Q1').getValue();
+  source.copyTo(ss.getRange('n2!D'+prow), {contentsOnly: true});
+  ss.getRange('n2!n1').setValue(0);
+}
+function ELO1() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var source = ss.getRange('ELO!K15:N15');
+  var prow = ss.getRange('ELO!J15').getValue();
+  source.copyTo(ss.getRange('ELO!E'+prow), {contentsOnly: true});
+}
+function ELO2() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var source = ss.getRange('ELO!K19:N19');
+  var prow = ss.getRange('ELO!J19').getValue();
+  source.copyTo(ss.getRange('ELO!E'+prow), {contentsOnly: true});
+}
